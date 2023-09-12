@@ -4,8 +4,8 @@
 'Cool Clock
 'https://github.com/JoshuaMakuch/S5-CoolClock
 
-Imports System.Configuration
-Imports System.Security.AccessControl
+Option Strict On
+Option Explicit On
 
 Public Class CoolClockForm
 
@@ -19,7 +19,7 @@ Public Class CoolClockForm
 
     'Every Time the timer clock timer ticks it updates the displayed time to the user's system clock is
     Private Sub ClockTimer_Tick(sender As Object, e As EventArgs) Handles ClockTimer.Tick
-        ClockLabel.Text = TimeOfDay
+        ClockLabel.Text = CStr(TimeOfDay)
         Datelabel.Text = DateString
         distanceTraveled = Math.Round((distanceTraveled + 299.792458), 3)   'Rounds the distance traveled counter to output 3 digits of significance
         clocks = clocks + 5000000
